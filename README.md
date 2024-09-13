@@ -1,4 +1,4 @@
-Web Deployment :
+Web Deployment : https://pradipta-wachyu-greenhousegallery.pbp.cs.ui.ac.id/
 
 Pertanyaan - pertanyaan :
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
