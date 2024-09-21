@@ -1,3 +1,4 @@
+import os
 """
 Django settings for Greenhouse_Gallery project.
 
@@ -23,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v=21gncu2&pb#jr1)x_u)hk3r@q-l_v%fxruhy6#qf^l1m208h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+PRODUCTION = os.getenv("PRODUCTION", False)
+DEBUG = not PRODUCTION
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "pradipta-wachyu-greenhousegallery.pbp.cs.ui.ac.id"]
 
@@ -123,4 +125,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","https://pradipta.wachyu:kL7h1Q9l-TIzfndfh37huVJ1taLBzSjx@pbp.cs.ui.ac.id/pradipta.wachyu/greenhousegallery", "https://pradipta-wachyu-greenhousegallery.pbp.cs.ui.ac.id"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","https://pradipta.wachyu:s8UUhMwI6uVBwnpMqll-XYzI7OughpQQ@pbp.cs.ui.ac.id/pradipta.wachyu/greenhousegalley", "https://pradipta-wachyu-greenhousegallery.pbp.cs.ui.ac.id"]
