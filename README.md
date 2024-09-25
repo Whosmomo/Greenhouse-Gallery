@@ -61,3 +61,20 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 ![postman json by id url](screenshot\postman_json_id.png)
 ![postman xml url](screenshot\postman_xml.png")
 ![postman xml by id url](screenshot\postman_xml_id.png")
+
+======================= TUGAS 4 =======================
+Pertanyaan - pertanyaan :
+Apa perbedaan antara HttpResponseRedirect() dan redirect()?
+->HttpResponseRedirect() dan redirect() sama-sama digunakan untuk mengarahkan pengguna ke url lain, namun HttpResponseRedirect() hanya dapat menerima URL string sedangkan redirect() dapat menerima URL string, nama URL, atau objek model. Ini membuat redirect() lebih fleksibel dalam penggunaan sedangkan HttpResponseRedirect() digunakan untuk pengalihan yang lebih spesifik berdasarkan URL.
+
+Jelaskan cara kerja penghubungan model Product dengan User!
+->Dengan ForeignKey kita dapat menautkan satu instance model ke satu user, ini dikarenakan ForeignKey memiliki hubungan many-to-one sehingga model Product pasti terasosiasikan dengan seorang User. 
+
+Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
+->authentication adalah proses verifikasi identitas pengguna, authorization adalah proses menentukan apakah pengguna yang terautentikasi memiliki izin untuk melakukan tindakan tertentu. Fungsi authenticate memverifikasi kredisensial pengguna, jika valid maka method akan mengembalikan objek pengguna. decorator @login_required dapat membatasi akses ke tampilan tertentu hanya untuk pengguna yang terautentikasi.
+
+Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?
+->Setelah pengguna berhasil login pengguna diberi session ID yang di simpan dalam cookie di browser mereka, Django menggunakan session ID ini untuk menghubungkan permintaan pengguna dengan data sesi yang disimpan di server. Selain untuk sesi login cookies dapat digunakan untuk preferences pengguna seperti bahasa, tema, dll. Selain itu cookies dapat digunakan untuk mengumpulkan data aktivitas pengguna. Tidak semua cookies aman digunakan, cookies dapat disalahgunakan untuk membuat permintaan palsu atas nama pengguna yang telah login. Terdapat juga cookies yang tidak terenkripsi yang dapat diintersep oleh penyerang. 
+
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+-> Saya menggunakan impor formulir bawaan UserCreationForm untuk membuat form regristrasi user, saya juga menggunakan import authenticate, login, logout, dan AuthenticationForm untuk melakukan autentikasi dan mengimplementasi fitur login dan logout, kemudian saya menggunakan ForeignKey untuk menghubungkan model Product dengan user agar aplikasi menampilkan model yang berbeda untuk masing-masing user. Kemudian pada server lokal saya membuat 2 akun melalui form regristrasi dan mendaftarkan 3 buah product untuk masing-masing akun. Terakhir saya mengimplementasi cookies dengan fungsi last_login dimana cookies yang dibuat oleh fungsi response.set_cookie('last_login', str(datetime.datetime.now())) akan ditambahkan pada respon yang dibuat menggunakan HttpResponseRedirect. 
