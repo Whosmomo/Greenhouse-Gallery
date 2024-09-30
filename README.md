@@ -78,3 +78,21 @@ Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dar
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 -> Saya menggunakan impor formulir bawaan UserCreationForm untuk membuat form regristrasi user, saya juga menggunakan import authenticate, login, logout, dan AuthenticationForm untuk melakukan autentikasi dan mengimplementasi fitur login dan logout, kemudian saya menggunakan ForeignKey untuk menghubungkan model Product dengan user agar aplikasi menampilkan model yang berbeda untuk masing-masing user. Kemudian pada server lokal saya membuat 2 akun melalui form regristrasi dan mendaftarkan 3 buah product untuk masing-masing akun. Terakhir saya mengimplementasi cookies dengan fungsi last_login dimana cookies yang dibuat oleh fungsi response.set_cookie('last_login', str(datetime.datetime.now())) akan ditambahkan pada respon yang dibuat menggunakan HttpResponseRedirect. 
+
+======================= TUGAS 5 =======================
+Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+->
+
+Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+->
+
+ Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+ ->
+
+ Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+ ->
+
+  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+  ->
+
+  
