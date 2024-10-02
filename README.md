@@ -81,18 +81,27 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 
 ======================= TUGAS 5 =======================
 Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
-->
+-> urutan prioritas : Inline style > ID selector > Classes > Element > Universal selector.
+Specificity dihitung berdasarkan kombinasi nilai-nilai berikut: 
+Inline style: Ditandai dengan 1 0 0 0 
+ID selector: Ditandai dengan 0 1 0 0 
+Class selector, attribute selector, pseudo-class: Ditandai dengan 0 0 1 0 
+Element (tag) selector dan pseudo-element: Ditandai dengan 0 0 0 1 
+Ketika beberapa selector berlaku untuk elemen yang sama, specificty ditentukan dengan menjumlahkan nilai masing-masing selector, dan aturan dengan specificity lebih tinggi akan diutamakan.
 
 Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
-->
+->Responsive design penting dalam pengembangan aplikasi web karena memastikan tampilan dan pengalaman pengguna tetap optimal di berbagai perangkat, seperti smartphone, tablet, dan desktop. Dengan semakin banyaknya orang yang mengakses web dari perangkat mobile, desain responsif membantu aplikasi web beradaptasi dengan ukuran layar yang berbeda tanpa kehilangan fungsionalitas atau estetika. Ini meningkatkan pengalaman pengguna (user experience) dan membantu menjaga performa situs.
+contoh aplikasi yang sudah menerapkan responsive design : Twitter, spotify
+contoh aplikasi yang belum menerapkan responsive design : Situs Web Klasik yang Tidak Dioptimalkan: Beberapa situs web lama, misalnya situs web pemerintah atau sekolah yang jarang diperbarui, sering kali tidak mendukung desain responsif. Pada layar ponsel, elemen-elemen tampilan seperti teks atau gambar mungkin terlihat tidak proporsional, terlalu kecil, atau membutuhkan pengguliran horizontal yang mengganggu.
 
  Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
- ->
+ ->Margin adalah ruang kosong di luar elemen, yang mengontrol jarak antara elemen dengan elemen lainnya.Margin tidak memiliki warna dan transparan. Border adalah garis yang mengelilingi elemen. Border membentuk tepi elemen dan bisa memiliki ketebalan, gaya, dan warna. Padding adalah ruang di dalam elemen, antara konten elemen dan border elemen. Padding menciptakan jarak antara konten dan tepi elemen (border).
 
  Jelaskan konsep flex box dan grid layout beserta kegunaannya!
- ->
+ -> Flexbox adalah metode tata letak satu dimensi yang berguna untuk mendistribusikan ruang di antara elemen-elemen dalam satu baris atau satu kolom. Flexbox memungkinkan penyesuaian tata letak yang responsif dan fleksibel. Flex box berguna dalam mengatur elemen dalam satu dimensi dan cocok untuk tata letak sederhana seperti navigation bar, daftar produk, dll.
+ CSS Grid Layout adalah sistem tata letak dua dimensi yang memberikan kontrol lebih besar dalam menyusun elemen-elemen baik secara horizontal maupun vertikal. Ini memungkinkan pembagian area konten menjadi baris dan kolom.
 
   Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
-  ->
+  -> untuk implementasi fitur edit product saya method untuk menyiapkan form dan mengambil entri product berdasarkan id serta melakukan perubahan apabila form valid dan di submit. Untuk delete product saya membuat method untuk mengambil entri product berdasarkan id dan menghapusnya menggunakan .delete(). Kemudian saya menggunakan tailwind dan styling css untuk kustomisasi agar web lebih menarik dan responsive untuk versi desktop dan juga mobile. 
 
   
