@@ -1,5 +1,5 @@
 <div class="relative break-inside-avoid">
-    <div class="relative top-5 bg-teal-100 shadow-md rounded-lg mb-6 break-inside-avoid flex flex-col border-2 border-indigo-300 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+    <div class="relative top-5 bg-teal-100 shadow-md rounded-lg mb-6 break-inside-avoid flex flex-col border-2 border-indigo-300 hover:rotate-0 transition-transform duration-300">
       <div class="bg-green-300 text-gray-800 p-4 rounded-t-lg border-b-2 border-indigo-300">
         <h3 class="font-bold text-xl mb-2">{{product_entry.name}}</h3>
         <p class="text-gray-600">{{product_entry.time}}</p>
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="absolute top-0 -right-4 flex space-x-1">
+    <div class="absolute top-0 -right-0 flex space-x-1">
       <a href="{% url 'main:edit_product' product_entry.pk %}" class="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full p-2 transition duration-300 shadow-md">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 20 20" fill="currentColor">
           <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />

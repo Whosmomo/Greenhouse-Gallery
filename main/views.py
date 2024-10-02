@@ -28,26 +28,24 @@ def show_main(request):
     return render(request, "main.html", context)
 
 def create_product_entry(request):
-    form = ProductForm(request.POST or None)
+    form = ProductForm(request.POST or None, request.FILES or None)
 
     if form.is_valid() and request.method == "POST":
-        mood_entry = form.save(commit=False)
-        mood_entry.user = request.user
-        mood_entry.save()
+        product_entry = form.save(commit=False)
+        product_entry.user = request.user
+        product_entry.save()
         return redirect('main:show_main')
 
     context = {'form': form}
     return render(request, "create_product_entry.html", context)
 
 def edit_product(request, id):
-    # Get mood entry berdasarkan id
     product = Product.objects.get(pk = id)
 
-    # Set mood entry sebagai instance dari form
-    form = ProductForm(request.POST or None, instance=product)
+    form = ProductForm(request.POST or None, request.FILES or None, instance=product)
 
     if form.is_valid() and request.method == "POST":
-        # Simpan form dan kembali ke halaman awal
+
         form.save()
         return HttpResponseRedirect(reverse('main:show_main'))
 
@@ -55,11 +53,10 @@ def edit_product(request, id):
     return render(request, "edit_product.html", context)
 
 def delete_product(request, id):
-    # Get mood berdasarkan id
     product = Product.objects.get(pk = id)
-    # Hapus mood
+
     product.delete()
-    # Kembali ke halaman awal
+
     return HttpResponseRedirect(reverse('main:show_main'))
 
 
