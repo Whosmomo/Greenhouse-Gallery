@@ -1,7 +1,8 @@
 Web Deployment : https://pbp.cs.ui.ac.id/web/project/pradipta.wachyu/greenhousegallery
 
-======================= TUGAS 2 =======================
-Pertanyaan - pertanyaan :
+# ======================= TUGAS 2 =======================
+## Pertanyaan - pertanyaan :
+
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 ->setelah mendapatkan ide tentang tema aplikasi, saya membuat sebuah direktori kosong dengan nama Greenhouse-Gallery. Setelah mengaktifkan
 virtual environment saya menjalankan perintah untuk membuat aplikasi main. Setelah menambah file urls.py saya menggunakan fungsi show_main
@@ -33,8 +34,8 @@ apa yang mereka pelajari.
 Mengapa model pada Django disebut sebagai ORM?
 ->karena Django menghubungkan objek python secara langsung ke tabel database tanpa harus menulis SQL secara langsung.
 
-======================= TUGAS 3 =======================
-Pertanyaan - pertanyaan :
+# ======================= TUGAS 3 =======================
+## Pertanyaan - pertanyaan :
 Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 ->kita memerluka data delivery untuk memastikan bahwa informasi yang dibutuhkan oleh komponen atau pengguna platform dapat dikirim secara lancar
 dan akurat, data delivery juga berperan dalam keamanan data karena mencangkup metode enkripsi untuk melindungi data yang dikirim.
@@ -62,8 +63,8 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 ![postman xml url](screenshot\postman_xml.png")
 ![postman xml by id url](screenshot\postman_xml_id.png")
 
-======================= TUGAS 4 =======================
-Pertanyaan - pertanyaan :
+# ======================= TUGAS 4 =======================
+## Pertanyaan - pertanyaan :
 Apa perbedaan antara HttpResponseRedirect() dan redirect()?
 ->HttpResponseRedirect() dan redirect() sama-sama digunakan untuk mengarahkan pengguna ke url lain, namun HttpResponseRedirect() hanya dapat menerima URL string sedangkan redirect() dapat menerima URL string, nama URL, atau objek model. Ini membuat redirect() lebih fleksibel dalam penggunaan sedangkan HttpResponseRedirect() digunakan untuk pengalihan yang lebih spesifik berdasarkan URL.
 
@@ -79,7 +80,7 @@ Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dar
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 -> Saya menggunakan impor formulir bawaan UserCreationForm untuk membuat form regristrasi user, saya juga menggunakan import authenticate, login, logout, dan AuthenticationForm untuk melakukan autentikasi dan mengimplementasi fitur login dan logout, kemudian saya menggunakan ForeignKey untuk menghubungkan model Product dengan user agar aplikasi menampilkan model yang berbeda untuk masing-masing user. Kemudian pada server lokal saya membuat 2 akun melalui form regristrasi dan mendaftarkan 3 buah product untuk masing-masing akun. Terakhir saya mengimplementasi cookies dengan fungsi last_login dimana cookies yang dibuat oleh fungsi response.set_cookie('last_login', str(datetime.datetime.now())) akan ditambahkan pada respon yang dibuat menggunakan HttpResponseRedirect. 
 
-======================= TUGAS 5 =======================
+# ======================= TUGAS 5 =======================
 Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 -> urutan prioritas : Inline style > ID selector > Classes > Element > Universal selector.
 Specificity dihitung berdasarkan kombinasi nilai-nilai berikut: 
@@ -104,4 +105,23 @@ contoh aplikasi yang belum menerapkan responsive design : Situs Web Klasik yang 
   Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
   -> untuk implementasi fitur edit product saya method untuk menyiapkan form dan mengambil entri product berdasarkan id serta melakukan perubahan apabila form valid dan di submit. Untuk delete product saya membuat method untuk mengambil entri product berdasarkan id dan menghapusnya menggunakan .delete(). Kemudian saya menggunakan tailwind dan styling css untuk kustomisasi agar web lebih menarik dan responsive untuk versi desktop dan juga mobile. 
 
-  
+# ======================= TUGAS 6 =======================
+## Pertanyaan - pertanyaan :
+Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+-> JavaScript memungkinkan pengembangan aplikasi web yang interaktif dan responsif dengan berjalan di sisi klien, mengurangi beban server dan mempercepat waktu respons. Dengan kemampuan untuk memanipulasi elemen HTML dan CSS secara dinamis, JavaScript menciptakan pengalaman pengguna yang lebih baik. Selain itu, dukungan luas dari berbagai framework dan integrasi API menjadikannya alat penting untuk membangun aplikasi web yang cepat, fungsional, dan kompatibel lintas platform.
+
+Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+->Fungsi await dalam penggunaan fetch() adalah untuk menunggu hingga operasi fetch() selesai dan mendapatkan hasilnya sebelum melanjutkan eksekusi kode berikutnya. fetch() mengembalikan Promise, dan await memastikan bahwa nilai dari promise tersebut (misalnya, respons HTTP) diperoleh sebelum melakukan tindakan lebih lanjut. Jika await tidak digunakan, hasil dari fetch() tidak akan langsung tersedia, dan kode berikutnya mungkin gagal karena mencoba mengakses hasil yang belum siap.
+
+Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+-> Decorator csrf_exempt digunakan pada view di Django untuk menonaktifkan perlindungan CSRF (Cross-Site Request Forgery) pada view tertentu, seperti ketika menangani AJAX POST request. Dalam konteks ini, kita menggunakan csrf_exempt karena permintaan AJAX sering kali tidak membawa token CSRF, yang diperlukan untuk validasi oleh Django. Jika token CSRF tidak ada atau tidak valid, Django akan menolak permintaan POST dan mengembalikan error 403 (Forbidden).
+
+Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+-> Pembersihan input di backend memastikan bahwa data yang diterima oleh server selalu aman dan sesuai standar, sehingga menghindari ancaman keamanan serta memastikan integritas dan konsistensi sistem.
+
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+-> Saya mengimplementasi AJAX GET dan POST dengan menambah fungsi baru di views.py yang berfungsi untuk menambah product tanpa harus refresh halaman web. Saya mengubah fungsi show_json dan show_xml untuk melakukan pengambilan data product yang terkait dengan user dengan cara memfilter berdasarkan user yang sedang login. Saya menambah mengaitkan tombol untuk men-**_trigger_** modal untuk menambah product baru secara AJAX. Terakhir saya membuat path untuk menghubungkan form yang sudah dibuat.
+
+
+
+
